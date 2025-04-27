@@ -1,0 +1,1144 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/StraightRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/RoadIntersection.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/advertising_board/protos/AdvertisingBoard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/trees/protos/Cypress.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/trees/protos/PalmTree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/animals/protos/Sheep.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/traffic/protos/PedestrianCrossing.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.1937261429810267 0.1801975580380366 -0.9643645688238569 1.576273934796885
+  position -1.8996190055489173 141.3048066807806 33.19563239618212
+}
+TexturedBackground {
+  texture "dusk"
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0 -0.68 0
+  rotation 0 1 0 4.692820414042842e-06
+  floorSize 30 200
+  floorAppearance Parquetry {
+    type "dark strip"
+    colorOverride 0.1 0.9 0.2
+  }
+  wallThickness 0.1
+  wallHeight 5
+  wallAppearance BrushedAluminium {
+    colorOverride 0.5 0.3 0
+  }
+}
+DEF DEER Robot {
+  children [
+    Solid {
+      translation 0.49 -38.44 0
+      children [
+        DistanceSensor {
+          translation 0 0 0.1
+          rotation 0 0 1 1.309
+          lookupTable [
+            0 0 0
+            10 10 0
+          ]
+        }
+        Transform {
+          scale 0.5 0.5 0.5
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/animals/protos/deer/textures/deer_basecolor.jpg"
+                  ]
+                }
+                roughness 0.7
+                metalness 0
+                normalMap ImageTexture {
+                  url [
+                    "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/animals/protos/deer/textures/deer_normal.jpg"
+                  ]
+                }
+              }
+              geometry Mesh {
+                url [
+                  "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/animals/protos/deer/meshes/deer.obj"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+      name "deer"
+      model "deer"
+      boundingObject Box {
+        size 1 0.2 1.4
+      }
+      recognitionColors [
+        0.415 0.364 0.302
+      ]
+    }
+  ]
+  controller "deer"
+  supervisor TRUE
+}
+PedestrianCrossing {
+  translation 2.3 -38.24 -0.1
+  size 1.7 2
+  enableBoundingObject FALSE
+}
+Sheep {
+  translation -10.2465 53.4436 0
+  rotation 0 0 1 -1.8325953071795862
+}
+Sheep {
+  translation -10.1616 58.337 0
+  rotation 0 0 1 -2.3561953071795863
+  name "sheep(1)"
+}
+Sheep {
+  translation -8.64122 55.0483 0
+  rotation 0 0 1 -1.5707953071795862
+  name "sheep(2)"
+}
+Sheep {
+  translation -11.8018 51.8881 0
+  rotation 0 0 1 -0.785395307179586
+  name "sheep(3)"
+}
+PalmTree {
+  translation -2.56 -6.56 0
+  enableBoundingObject FALSE
+}
+PalmTree {
+  translation 7.67 -55.19 0
+  name "palm tree(2)"
+  enableBoundingObject FALSE
+}
+PalmTree {
+  translation 4.89 42.63 0
+  name "palm tree(1)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.21 0 0
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.21 10.27 0
+  name "cypress tree(1)"
+}
+Cypress {
+  translation 7.21 -15.04 0
+  name "cypress tree(2)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.21 -31.82 0
+  name "cypress tree(3)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.21 18.83 0
+  name "cypress tree(4)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.53 0 0
+  name "cypress tree(5)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.71 -15.56 0
+  name "cypress tree(6)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.71 -30.99 0
+  name "cypress tree(25)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.71 -47.48 0
+  name "cypress tree(26)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.71 -60.79 0
+  name "cypress tree(27)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -7.69 -76.04 0
+  name "cypress tree(28)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -8.74 -93.6 0
+  name "cypress tree(29)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.13 -46.35 0
+  name "cypress tree(30)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.03 -63.88 0
+  name "cypress tree(31)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 10.09 -79.9 0
+  name "cypress tree(32)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 10.5 -95.04 0
+  name "cypress tree(33)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.56 9.73 0
+  name "cypress tree(7)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.57 18.08 0
+  name "cypress tree(8)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.57 28.74 0
+  name "cypress tree(17)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.57 39.43 0
+  name "cypress tree(18)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.57 49.58 0
+  name "cypress tree(19)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.57 59.51 0
+  name "cypress tree(20)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.57 68.94 0
+  name "cypress tree(21)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.57 77.43 0
+  name "cypress tree(22)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.57 85.12 0
+  name "cypress tree(23)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.57 91.84 0
+  name "cypress tree(24)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 10.47 72.33 0
+  name "cypress tree(34)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -4.85 52.63 0
+  name "cypress tree(35)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -6.95 65.61 0
+  name "cypress tree(36)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.57 63.81 0
+  name "cypress tree(37)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 9.71 94.97 0
+  name "cypress tree(38)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 4.55 83.15 0
+  name "cypress tree(39)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 9.58 83.23 0
+  name "cypress tree(40)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 9.3 79.36 0
+  name "cypress tree(41)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 12.31 85.34 0
+  name "cypress tree(42)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -9.76 95.21 0
+  name "cypress tree(43)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -2.57 55.24 0
+  name "cypress tree(44)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -6.78 57.29 0
+  name "cypress tree(45)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -11.35 69.97 0
+  name "cypress tree(46)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -7.6 71.91 0
+  name "cypress tree(47)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -10.55 75.69 0
+  name "cypress tree(48)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -10.67 81.73 0
+  name "cypress tree(49)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -0.37 71.97 0
+  name "cypress tree(50)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 13 95.79 0
+  name "cypress tree(51)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -7.56 61.74 0
+  name "cypress tree(52)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 12.02 91.84 0
+  name "cypress tree(53)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -5.44 76 0
+  name "cypress tree(54)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -9.73 85.27 0
+  name "cypress tree(55)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -6.3 91.84 0
+  name "cypress tree(56)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -5.64 82.19 0
+  name "cypress tree(57)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -7.33 87.25 0
+  name "cypress tree(58)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.59 72.66 0
+  name "cypress tree(59)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 12.93 58.72 0
+  name "cypress tree(60)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -9.06 45.39 0
+  name "cypress tree(61)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 9.72 62.31 0
+  name "cypress tree(62)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 11.44 66.54 0
+  name "cypress tree(63)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 12.32 75.32 0
+  name "cypress tree(64)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation -11.87 91.84 0
+  name "cypress tree(65)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.21 28.25 0
+  name "cypress tree(9)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.21 39.03 0
+  name "cypress tree(10)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.21 49.87 0
+  name "cypress tree(11)"
+}
+Cypress {
+  translation 7.21 59.99 0
+  name "cypress tree(12)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.21 69.09 0
+  name "cypress tree(13)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.21 77.53 0
+  name "cypress tree(14)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.21 87.07 0
+  name "cypress tree(15)"
+  enableBoundingObject FALSE
+}
+Cypress {
+  translation 7.21 91.7 0
+  name "cypress tree(16)"
+  enableBoundingObject FALSE
+}
+AdvertisingBoard {
+  translation -11.705 19.6435 0
+  rotation 0 0 1 0.523599
+}
+Solid {
+  translation 3.51059 86.9585 0.309606
+  rotation 6.18222e-11 4.12149e-11 1 -5.307179586466759e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/5.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.8 0.1 0.8
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.51059 76.8485 0.309606
+  rotation -7.2162e-16 -2.44116e-16 1 0.523593
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/30.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject Box {
+    size 0.8 0.1 0.7
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.51059 -20.1615 0.309606
+  rotation 6.18222e-11 4.12149e-11 1 -5.307179586466759e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/120.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject Box {
+    size 0.8 0.1 0.7
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.51059 -36.3615 0.309606
+  rotation 6.18222e-11 4.12149e-11 1 -5.307179586466759e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/crosswalk.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(11)"
+  boundingObject Box {
+    size 0.8 0.1 0.8
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.51058 -92.7615 0.309606
+  rotation 6.18222e-11 4.12149e-11 1 -5.307179586466759e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/Left_29.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(12)"
+  boundingObject Box {
+    size 0.8 0.1 0.8
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.51058 -52.0315 0.309606
+  rotation 6.18222e-11 4.12149e-11 1 -5.307179586466759e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/30.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(16)"
+  boundingObject Box {
+    size 0.8 0.1 0.8
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.95023 -80.8515 0.309606
+  rotation -1.11408e-16 1.67111e-16 1 3.14158
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/Stop_408.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(13)"
+  boundingObject Box {
+    size 0.8 0.1 0.8
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.51059 65.5185 0.309606
+  rotation -7.2162e-16 -2.44116e-16 1 0.523593
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/40.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(5)"
+  boundingObject Box {
+    size 0.8 0.1 0.8
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.51063 51.1385 0.309606
+  rotation 6.18222e-11 4.12148e-11 1 -5.307179586466759e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/Stop_408.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(6)"
+  boundingObject Box {
+    size 0.8 0.1 0.8
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.5106 36.4085 0.309606
+  rotation 6.18222e-11 4.12149e-11 1 -5.307179586466759e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/80.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(7)"
+  boundingObject Box {
+    size 0.8 0.1 0.8
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.51059 22.3385 0.309606
+  rotation 6.18222e-11 4.12149e-11 1 -5.307179586466759e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/90.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(8)"
+  boundingObject Box {
+    size 0.8 0.1 0.8
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.51062 8.3085 0.309606
+  rotation 6.18222e-11 4.12149e-11 1 -5.307179586466759e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/100.png"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(9)"
+  boundingObject Box {
+    size 0.8 0.1 0.8
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Solid {
+  translation 3.51059 -6.3615 0.309606
+  rotation 6.18222e-11 4.12149e-11 1 -5.307179586466759e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "../textures/110.jpg"
+          ]
+        }
+        metalness 0
+      }
+      geometry Box {
+        size 0.8 0.1 0.8
+      }
+    }
+  ]
+  name "solid(10)"
+  boundingObject Box {
+    size 0.8 0.1 0.8
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+Robot {
+  translation 2.74923 93.5648 0.0905767
+  rotation 0.9999998130604079 0.00025980815045687693 -0.0005535150172847047 1.5714674367030843
+  children [
+    DEF Camera Camera {
+      translation 0 0.06 0.12
+      rotation 0.5773479358528951 0.5773499358526729 0.5773529358523396 -2.094395307179586
+      children [
+        Pose {
+          rotation 0 1 0 -1.5707953071795862
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.01
+                radius 0.005
+              }
+            }
+          ]
+        }
+      ]
+      name "Camera"
+      fieldOfView 1
+      width 640
+      height 640
+      far 7
+      recognition Recognition {
+      }
+    }
+    DEF CameraStand Pose {
+      translation 0.0005439 0.075 0.114131
+      rotation 0 1 0 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.223529 0.670588
+          }
+          geometry Box {
+            size 0.035 0.06 0.006
+          }
+        }
+      ]
+    }
+    DEF RightInfrared DistanceSensor {
+      translation -0.078 0.055 0.11863
+      rotation 0 -1 0 1.9999999999999998
+      children [
+        Pose {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.007 0.007 0.007
+              }
+            }
+          ]
+        }
+      ]
+      name "distance sensor(2)"
+      type "infra-red"
+    }
+    DEF RightStand Pose {
+      translation -0.0605439 0.05 0.0941305
+      rotation 0 -1 0 0.261799
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.223529 0.670588
+          }
+          geometry Box {
+            size 0.033 0.006 0.07
+          }
+        }
+      ]
+    }
+    DEF LeftStand Pose {
+      translation 0.0605439 0.05 0.0941305
+      rotation 0 1 0 0.261799
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.223529 0.670588
+          }
+          geometry Box {
+            size 0.033 0.006 0.07
+          }
+        }
+      ]
+    }
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.033 0.006 0.07
+      }
+    }
+    DEF LeftInfrared DistanceSensor {
+      translation 0.078 0.055 0.11863
+      rotation 0 -1 0 1.3261
+      children [
+        Pose {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                metalness 0
+              }
+              geometry Box {
+                size 0.007 0.007 0.007
+              }
+            }
+          ]
+        }
+      ]
+      name "left"
+      lookupTable [
+        0 0 0
+        5 5 0
+      ]
+      type "infra-red"
+    }
+    DEF Sonar DistanceSensor {
+      translation -5.19723e-15 0 0.13
+      rotation 0 -1 0 1.566711940082131
+      children [
+        Pose {
+          translation 0.01 0 0.0300001
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+              }
+              geometry Cylinder {
+                height 0.025
+                radius 0.012
+              }
+            }
+          ]
+        }
+        Pose {
+          translation 0.00999988 0 -0.03
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+              }
+              geometry Cylinder {
+                height 0.025
+                radius 0.012
+              }
+            }
+          ]
+        }
+      ]
+      name "sonar"
+      recognitionColors [
+        0 0 0
+      ]
+      lookupTable [
+        0 0 0
+        10 10 0
+      ]
+      type "sonar"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0.556863 0.556863 0.556863
+        roughness 1
+      }
+      geometry Box {
+        size 0.19 0.095 0.255
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1340.6531816485237
+        anchor -0.12 -0.01 0.09
+      }
+      device [
+        PositionSensor {
+          name "position_1"
+        }
+        RotationalMotor {
+          name "motor_1"
+          maxVelocity 50
+        }
+      ]
+      endPoint Solid {
+        translation -0.12016 -0.01019592766627806 0.09034596022269449
+        rotation -1 0 0 3.831656902063144
+        children [
+          DEF WHEEL Pose {
+            rotation 0 1 0 1.6
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.05
+                  radius 0.06
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1340.653116625391
+        anchor 0.12 -0.01 0.09
+      }
+      device [
+        PositionSensor {
+          name "position_2"
+        }
+        RotationalMotor {
+          name "motor_2"
+          maxVelocity 50
+        }
+      ]
+      endPoint Solid {
+        translation 0.12016 -0.010195884572136837 0.0903459846246566
+        rotation -1 0 0 3.8317814615315866
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL3 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1340.6531522667626
+        anchor -0.12 -0.01 -0.09
+      }
+      device [
+        RotationalMotor {
+          name "motor_3"
+          maxVelocity 50
+        }
+      ]
+      endPoint Solid {
+        translation -0.12016 -0.010318209814656722 -0.08963934315484642
+        rotation -1 0 0 3.831775136599197
+        children [
+          USE WHEEL
+        ]
+        name "solid(2)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL4 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1340.6532173734452
+        anchor 0.12 -0.01 -0.09
+      }
+      device [
+        RotationalMotor {
+          name "motor_4"
+          maxVelocity 50
+        }
+      ]
+      endPoint Solid {
+        translation 0.12016 -0.010318251102572845 -0.08963937958763932
+        rotation -0.9999999999999999 0 0 3.831660651037261
+        children [
+          USE WHEEL
+        ]
+        name "solid(3)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "follower"
+  boundingObject USE BODY
+  physics Physics {
+    density -1
+    mass 1
+  }
+  controller "camera"
+}
+Solid {
+  translation 2.30996 -74.16 0.02
+  rotation 0 0 1 1.5707996938995747
+  children [
+    StraightRoadSegment {
+      width 1.5
+      roadBorderHeight 0
+      startingRoadBorderWidth 0.1
+      endingRoadBorderWidth 0.1
+      rightBorder FALSE
+      leftBorder FALSE
+      length 169
+      rightBarrierBoundingObject FALSE
+      leftBarrierBoundingObject FALSE
+    }
+  ]
+  name "solid(17)"
+}
+Solid {
+  translation 2.35252 -79.8439 0.02
+  rotation 0 0 1 0.7853996938995746
+  children [
+    RoadIntersection {
+      roadsWidth 1.5
+      startRoadBorder FALSE
+      startRoadBorderHeight 0.1
+      startRoadBorderWidth 0.1
+    }
+  ]
+  name "solid(18)"
+}
+Solid {
+  translation 2.33844 -91.309 0.02
+  rotation 0 0 1 0.7853996938995746
+  children [
+    RoadIntersection {
+      roadsWidth 1.5
+      startRoadBorder FALSE
+      startRoadBorderHeight 0.1
+      startRoadBorderWidth 0.1
+    }
+  ]
+  name "solid(19)"
+}
