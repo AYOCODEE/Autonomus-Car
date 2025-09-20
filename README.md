@@ -30,7 +30,7 @@ Below is a screenshot showing the robot within its simulation environment:
 
 ## References
 - Detailed project writeup: [DeepLearningInWebots - IZ AO.pdf](./DeepLearningInWebots%20-%20IZ%20AO.pdf)
-- Webots Documentation: https://cyberbotics.com/doc/
+- Webots Documentation: [https://cyberbotics.com/doc/](https://cyberbotics.com/)
 
 ## Acknowledgements
 Special thanks to all contributors and sources referenced in the project writeup.
